@@ -1,6 +1,6 @@
 import React , {Component} from 'react';
 import Aux from '../../../hoc/Auxiliary/Auxiliary';
-// import Button from '../../UI/Button/Button';
+import Button from '../../UI/Button/Button';
 
 
 //Stateless Component
@@ -50,7 +50,10 @@ class OrderSummary extends Component {
                 <ul>
                     {ingredients}
                 </ul>
+                <p><strong>Price: {this.props.price}</strong></p>
                 <p>Want to Checkout?!</p>
+                <Button btnType = "Danger" clicked = {this.props.purchaseCanceled}>Cancel</Button>
+                <Button btnType = "Success" clicked = {this.props.purchaseContinued}>Continue</Button>
             </Aux>
         )
     }
